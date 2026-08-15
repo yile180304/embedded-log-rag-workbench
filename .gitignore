@@ -1,0 +1,32 @@
+.venv/
+.venv312/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+.pytest_cache/
+
+# Local indexes, source manuals and runtime data
+storage/
+资料/
+data/runtime/
+reports/
+tmp/
+*.sqlite3
+*.sqlite3-*
+*.pdf
+
+# Qt/CMake build output and generated screenshots
+qt/build*/
+qt/.qt/
+*.user
+*.user.*
+
+# Local tooling and internal planning metadata
+.codestable/
+.cache/
+.vscode/
+.idea/
+
+# Local handoff notes, not part of the public documentation set
+docs/ui-optimization-agent-handoff.md
