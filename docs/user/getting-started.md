@@ -5,7 +5,7 @@ component: rag-desktop-product
 status: current
 summary: 从准备 Python 和 STM32F4 资料到建立索引、运行诊断、管理案例和执行检索评估的完整操作指南。
 tags: [RAG, STM32F4, Qt6, user-guide]
-last_reviewed: 2026-08-15
+last_reviewed: 2026-08-17
 ---
 
 # 用户快速上手
@@ -75,6 +75,26 @@ $env:Path = 'D:\Qt\6.8.3\mingw_64\bin;D:\Qt\Tools\mingw1310_64\bin;' + $env:Path
 3. 索引应显示 ready 和实际 chunks。
 4. Worker 应变为 Ready。
 5. 第一次真实查询会加载 Embedding/Reranker，后续任务复用缓存。
+
+### 使用 Windows 发布目录
+
+维护者可以在仓库根目录执行：
+
+```powershell
+.\tools\package-windows.ps1
+```
+
+生成结果位于 `dist/RagDiagnosticWorkbench/`。正式演示使用：
+
+```powershell
+.\dist\RagDiagnosticWorkbench\Launch-RagWorkbench.ps1
+```
+
+发布目录已经包含 Qt/MinGW 运行库，不要求系统 `PATH` 中安装 Qt。它仍使用仓库内的 `.venv312`、模型缓存、资料和索引；如果把发布目录复制到仓库外，需指定：
+
+```powershell
+.\Launch-RagWorkbench.ps1 -ProjectRoot "D:\path\to\RAG"
+```
 
 ## 专家问答
 
@@ -160,7 +180,7 @@ A: 当前 Evidence 没有达到证据门槛。应补充资料、调整问题或�
 
 Q: `qt/build` 里为什么有很多 exe？
 
-A: 除 `RagDiagnosticWorkbench.exe` 外大部分是 smoke 测试程序。正式发布目录会在 Windows 打包阶段单独生成。
+A: 除 `RagDiagnosticWorkbench.exe` 外大部分是 smoke 测试程序。面向演示的目录是 `dist/RagDiagnosticWorkbench/`，其中不会包含这些测试程序。
 
 Q: 可以直接把 `storage` 上传到 GitHub 吗？
 
@@ -171,3 +191,4 @@ A: 不可以。它包含本地手册、Chroma、chunks 和可能受版权限制�
 - [项目 README](../../README.md)
 - [架构与扩展指南](../dev/architecture-and-extension.md)
 - [Qt 详细说明](../../qt/README.md)
+- [Windows 打包与发布](../dev/windows-packaging.md)

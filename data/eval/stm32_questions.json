@@ -1,0 +1,25 @@
+[
+  {
+    "query": "SCB->CFSR 在哪里定义？",
+    "relevant_sources": ["core_cm4.h"]
+  },
+  {
+    "query": "CFSR=0x82 应该先检查什么？",
+    "relevant_chunk_ids": ["dm00046982-stm32-cortexm4-mcus-and-mpus-programm-609a5d842b-p0237-4-4-10-configurable-fault-status-register-cfsr-u-001"]
+  },
+  {
+    "query": "Fault Analyzer 怎么查看 CFSR？",
+    "relevant_chunk_ids": [
+      "dm00354244-stm32-microcontroller-debug-toolbox-s-a4a70969cb-p0065-at-runtime-before-pressing-resume-button-open-fa-001",
+      "dm00354244-stm32-microcontroller-debug-toolbox-s-a4a70969cb-p0066-informations-in-fault-analyzer-see-figure-46-001"
+    ]
+  },
+  {
+    "query": "ETH_DMASR 的 EBS 表示什么？",
+    "relevant_chunk_ids": ["dm00031020-stm32f405-415-stm32f407-417-stm32f427-6835632e60-p1214-ethernet-dma-status-register-eth-dmasr-001"]
+  },
+  {
+    "query": "FreeRTOS 任务栈溢出如何确认？",
+    "relevant_sources": ["FreeRTOS 栈溢出资料.txt"]
+  }
+]

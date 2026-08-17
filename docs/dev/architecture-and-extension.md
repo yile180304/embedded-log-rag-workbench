@@ -5,7 +5,7 @@ component: rag-desktop-product
 status: current
 summary: 介绍 Python RAG、Qt Workspace、Local Worker Protocol、SQLite 数据边界、测试和扩展方式。
 tags: [architecture, Python, Qt6, worker-protocol]
-last_reviewed: 2026-08-15
+last_reviewed: 2026-08-17
 ---
 
 # 架构与扩展指南
@@ -139,6 +139,15 @@ Candidate 和 Approved Sample 物理分离。批准操作使用事务，避免 C
 
 设置使用当前 Windows 用户的 `QSettings`，不写入 API Key。
 
+发布启动器可以设置以下环境变量，它们的优先级高于旧的 `QSettings` 路径：
+
+| 环境变量 | 含义 |
+|---|---|
+| `RAG_DIAGNOSTIC_PROJECT_ROOT` | 包含 `pyproject.toml` 的仓库根目录 |
+| `RAG_DIAGNOSTIC_PYTHON_EXECUTABLE` | Worker 使用的 Python 解释器 |
+
+这两个变量只覆盖项目和 Python 路径，不覆盖模型、top-k 或超时设置。
+
 ### Expected Evidence 匹配
 
 匹配优先级：
@@ -218,7 +227,7 @@ $env:TRANSFORMERS_OFFLINE = '1'
 - `task_timeout_seconds` 当前只保存设置，运行时恢复功能尚未完成。
 - STM32F4 索引目前是全量重建，尚未实现文档指纹、增量更新和回滚记录。
 - 当前评估集较小，只适合代码回归。
-- Windows `dist` 尚未生成，`qt/build` 不应作为发布目录。
+- Windows `dist` 是 source-assisted 轻量包，不包含 Python、模型、手册和索引；完整自包含安装器仍未实现。
 
 ## 相关文档
 
@@ -226,3 +235,4 @@ $env:TRANSFORMERS_OFFLINE = '1'
 - [用户快速上手](../user/getting-started.md)
 - [Qt 详细运行说明](../../qt/README.md)
 - [GitHub 发布检查清单](../github-release-checklist.md)
+- [Windows 打包与发布](windows-packaging.md)

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "embedded-log-rag"
+version = "0.1.0"
+description = "Evidence-grounded RAG prototype for embedded logs and protocol diagnostics"
+requires-python = ">=3.10"
+dependencies = [
+  "chromadb>=1.5,<2",
+  "pypdf>=5,<7",
+]
+
+[project.optional-dependencies]
+ml = [
+  "sentence-transformers>=5,<6",
+]
+
+[project.scripts]
+rag-diagnostic = "rag_diagnostic.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,18 @@
+[
+  {
+    "query": "CFSR 和 HFSR 在 HardFault 定位中分别看什么？",
+    "relevant_sources": ["hardfault_manual.md"]
+  },
+  {
+    "query": "PC 和 LR 栈帧值应该怎样结合 map 文件分析？",
+    "relevant_sources": ["hardfault_manual.md"]
+  },
+  {
+    "query": "偶发丢包后车辆状态异常，抓包和接收端应该先检查什么？",
+    "relevant_sources": ["trdp_udp_diagnostics.md"]
+  },
+  {
+    "query": "串口半包和 CRC16 校验应该怎样设计解析流程？",
+    "relevant_sources": ["frame_parser_and_crc.md"]
+  }
+]

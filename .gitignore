@@ -7,11 +7,11 @@ __pycache__/
 .pytest_cache/
 
 # Local indexes, source manuals and runtime data
-storage/
-资料/
-data/runtime/
-reports/
-tmp/
+/storage/
+/资料/
+/data/runtime/
+/reports/
+/tmp/
 *.sqlite3
 *.sqlite3-*
 *.pdf
@@ -19,14 +19,17 @@ tmp/
 # Qt/CMake build output and generated screenshots
 qt/build*/
 qt/.qt/
+dist/
 *.user
 *.user.*
 
 # Local tooling and internal planning metadata
 .codestable/
+.claude/
 .cache/
 .vscode/
 .idea/
 
 # Local handoff notes, not part of the public documentation set
 docs/ui-optimization-agent-handoff.md
+docs/ui-redesign-handoff.md
