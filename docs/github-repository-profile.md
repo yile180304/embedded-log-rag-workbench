@@ -38,6 +38,5 @@ Release 描述可以直接引用 [CHANGELOG](../CHANGELOG.md) 的 `0.1.0` 内容
 
 ## 上传前仍需确认
 
-1. 选择并加入 `LICENSE`。
-2. 确认 GitHub 用户名、仓库名和公开/私有状态。
-3. 确认是否把 `v0.1.0` 标为 Pre-release。
+1. 确认 GitHub 用户名、仓库名和公开/私有状态。
+2. 确认是否把 `v0.1.0` 标为 Pre-release。
